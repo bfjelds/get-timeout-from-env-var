@@ -1,0 +1,18 @@
+name: print
+on: push
+env: 
+  continue: true
+  time: 1
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - continue-on-error: ${{ fromJSON(env.continue) }}
+      timeout-minutes: ${{ fromJSON(env.time) }}
+      run: |
+        echo "before first ${{ fromJSON(env.time) }}m sleep"
+        sleep ${{ fromJSON(env.time) }}m
+        echo "after first ${{ fromJSON(env.time) }}m sleep"
+        echo "before second ${{ fromJSON(env.time) }}m sleep"
+        sleep ${{ fromJSON(env.time) }}m
+        echo "after second ${{ fromJSON(env.time) }}m sleep"
