@@ -5,11 +5,11 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    timeout-minutes: ${{ fromJSON(env.time) }}
+    #timeout-minutes: ${{ fromJSON(env.time) }}
     
     steps:
     - name: step1
-      #timeout-minutes: ${{ fromJSON(env.time) }}
+      timeout-minutes: ${{ fromJSON(env.time) }}
       run: |
         echo "before first ${{ fromJSON(env.time) }}m sleep"
         sleep ${{ fromJSON(env.time) }}m
