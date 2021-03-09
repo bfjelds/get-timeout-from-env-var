@@ -11,7 +11,7 @@ jobs:
     - name: step1
       timeout-minutes: ${{ fromJSON(env.time) }}
       run: |
-        echo "before first ${{ fromJSON(env.time) }}m sleep"
+        echo "before first ${{ fromJSON(env.time) }}m sleep "
         sleep ${{ fromJSON(env.time) }}m
         echo "after first ${{ fromJSON(env.time) }}m sleep"
         echo "before second ${{ fromJSON(env.time) }}m sleep"
